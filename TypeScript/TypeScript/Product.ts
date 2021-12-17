@@ -48,8 +48,8 @@ class Product
 }
 
 let p1:Product = new Product(2);
+//p1.Id=23; error since its only read-only
 p1.Name="Iphone";
 p1.Price=50000;
 p1.Qty=2;
 p1.showDetails();
-console.log(p1.Id);
