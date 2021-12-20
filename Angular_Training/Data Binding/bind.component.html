@@ -1,0 +1,13 @@
+<h3>Data Binding Example</h3>
+
+<div>
+    Product Name : <input type="text" [(ngModel)]="name">
+    <br><br>
+    Unit Price : <input type="text" [(ngModel)]="price">
+    <br><br>
+    Quantity <input type="text" [(ngModel)]="qty">
+    <br><br>
+    <button (click)="getTotal()">Get Total</button>
+    <br><br>
+    Total Amount : {{total}}
+</div>
