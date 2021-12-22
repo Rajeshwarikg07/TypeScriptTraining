@@ -1,0 +1,65 @@
+<h3>CRUD Operations on Products</h3>
+
+<div>
+    Product Id : <input [disabled]="isPIdDisabled" type="text" [(ngModel)]="pid">
+    <br><br>
+    Product Name : <input type="text" [(ngModel)]="pname">
+    <br><br>
+    Product Price : <input type="text" [(ngModel)]="price">
+    <br><br>
+    Product Category : <input type="text" [(ngModel)]="category">
+    <br><br>
+    Product Quantity : <input type="text" [(ngModel)]="qty">
+    <br><br>
+    <input type="button"  value="Get Product" (click)="getProduct()"  /> |
+    <input type="button"  value="Add Product" (click)="addProduct()"  /> |
+    <input type="button"  value="Update Product" (click)="updateProduct()"  /> |
+    <input type="button"  value="Clear" (click)="clearFields()"  />  
+</div>
+<br><br>
+
+<!-- <div><b>{{message}}</b></div> -->
+
+<br><br>
+<!-- 
+<div>
+    <table border="1"  width="500">
+        <tr>
+            <th colspan="5">Product Details</th>
+        </tr>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Category</th>
+          <th>Quantity</th>
+        </tr>
+      
+        <tr *ngFor="let item of parrar">
+          <td>{{item.pid}}</td>
+          <td>{{item.pname}}</td>
+          <td>{{item.price}}</td>
+          <td>{{item.category}}</td>
+          <td>{{item.qty}}</td>
+          <td><a href="javascript:void(0);">Delete</a></td> |
+          <td><a href="javascript:void(0);">Select</a></td> 
+
+        </tr>
+      
+      </table>
+</div> -->
+
+<div class="row">
+    <div *ngFor="let item of parrar" class="column">
+      <div class="card">
+         <p style="color: lightcoral;">Product Details</p>
+         <p> ID : {{item.pid}}</p>
+         <p> Name : {{item.pname}}</p>
+         <p> Price : {{item.price}}</p>
+         <p> Category : {{item.category}}</p>
+         <p> Quantity : {{item.qty}}</p>
+         <a href="javascript:void(0);" (click)="deleteProduct(item.pid)"><img style="width: 30px; height: 30px;" src="assets/Images/delete.png"></a> 
+         <a href="javascript:void(0);" (click)="selectProduct(item.pid)"><img style="width: 30px; height: 30px;" src="assets/Images/select.png"></a> 
+      </div>
+    </div>
+</div>
