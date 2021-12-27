@@ -1,0 +1,62 @@
+<h3>CRUD Operations on Products</h3>
+
+<div>
+    Product Id : <input [disabled]="isPIdDisabled" type="text" [(ngModel)]="pid">
+    <br><br>
+    Product Name : <input type="text" [(ngModel)]="pname">
+    <br><br>
+    Product Price : <input type="text" [(ngModel)]="price">
+    <br><br>
+    Product Category : <input type="text" [(ngModel)]="category">
+    <br><br>
+    Product Quantity : <input type="text" [(ngModel)]="qty">
+    <br><br>
+    <input type="button"  value="Get Product" (click)="getProduct()"  /> |
+    <input type="button"  value="Add Product" (click)="addProduct()"  /> |
+    <input type="button"  value="Update Product" (click)="updateProduct()"  /> |
+    <input type="button"  value="Clear" (click)="clearFields()"  />  
+</div>
+<br><br>
+<style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    /* body {
+      font-family: Arial, Helvetica, sans-serif;
+    } */
+    
+    /* Float four columns side by side */
+    .column {
+      float: left;
+      width: 25%;
+      padding: 0 10px;
+    }
+    
+    
+    /* Style the counter cards */
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      padding: 16px;
+      text-align: center;
+      background-color: #f1f1f1;
+    }
+    </style>
+<!-- <div><b>{{message}}</b></div> -->
+
+<br><br>
+
+<div class="row">
+    <div *ngFor="let item of parrar" class="column">
+      <div class="card">
+         <p style="color: lightcoral;">Product Details</p>
+         <p> ID : {{item.pid}}</p>
+         <p> Name : {{item.pname}}</p>
+         <p> Price : {{item.price}}</p>
+         <p> Category : {{item.category}}</p>
+         <p> Quantity : {{item.qty}}</p>
+         <a href="javascript:void(0);" (click)="deleteProduct(item.pid)"><img style="width: 30px; height: 30px;" src="assets/Images/delete.png"></a> 
+         <a href="javascript:void(0);" (click)="selectProduct(item.pid)"><img style="width: 30px; height: 30px;" src="assets/Images/select.png"></a> 
+      </div>
+    </div>
+</div>
